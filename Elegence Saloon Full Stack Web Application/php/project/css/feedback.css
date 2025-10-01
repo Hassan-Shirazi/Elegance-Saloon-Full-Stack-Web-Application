@@ -1,0 +1,496 @@
+ /* Base Styles */
+    :root {
+        --primary-color: #e0e0e0;
+        /* Light Gray for accents */
+        --secondary-color: #707070;
+        /* Medium Gray/Silver for highlights */
+        --tertiary-color: #f8f8f8;
+        /* Off-White background */
+        --accent-color: #eaeaea;
+        /* Another light gray for section backgrounds */
+        --text-color: #444;
+        /* Darker gray for main text */
+        --light-text: #ffffff;
+        /* White text */
+        --dark-text: #1a1a1a;
+        /* Very dark gray/black for main headings */
+        --hover-color: #b0b0b0;
+        /* Subtle silver/gray for hover effects */
+        --transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--tertiary-color);
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border-radius: 25px;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: var(--dark-text);
+        margin-bottom: 15px;
+    }
+
+    .underline {
+        height: 3px;
+        width: 70px;
+        background-color: var(--secondary-color);
+        margin: 0 auto;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--light-text);
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+    }
+
+    .btn:hover {
+        background-color: var(--dark-text);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Feedback Hero Section */
+    #feedback-hero {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: url("https://i.ibb.co/jvpjPnPp/back2.png"); 
+        background-size: cover;
+        background-position: center;
+        color: var(--light-text);
+        overflow: hidden;
+    }
+
+    #feedback-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+        z-index: 1;
+    }
+
+    #feedback-hero .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 90%;
+        max-width: 800px;
+    }
+
+    #feedback-hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        -webkit-text-stroke: 0.8px gray;
+    }
+
+    #feedback-hero h2 {
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin-bottom: 40px;
+        animation: fadeInUp 1s ease;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Feedback Form Section */
+    #feedback-form {
+        background-color: var(--tertiary-color);
+    }
+
+    .feedback-form-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: var(--light-text);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: var(--dark-text);
+        font-size: 1rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--primary-color);
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        color: var(--text-color);
+        background-color: var(--tertiary-color);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(112, 112, 112, 0.2);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    /* Star Rating */
+    .star-rating {
+        direction: rtl; /* For right-to-left star display */
+        display: inline-block;
+        font-size: 0; /* Hide space between stars */
+        color: var(--primary-color); /* Default star color */
+    }
+
+    .star-rating input {
+        display: none;
+    }
+
+    .star-rating label {
+        font-size: 1.8rem; /* Star size */
+        padding: 0 5px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        display: inline-block;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover~label,
+    .star-rating input:checked~label {
+        color: gold; /* Gold color for selected stars */
+    }
+
+    .star-rating input:checked+label:hover {
+        color: gold; /* Keep gold on hover after selection */
+    }
+
+    /* Why Feedback Matters Section */
+    #why-feedback {
+        background-color: var(--accent-color);
+    }
+
+    .why-feedback-intro {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .why-feedback-intro p {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-color);
+    }
+
+    .why-feedback-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .feedback-benefit-card {
+        background-color: var(--light-text);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .feedback-benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-benefit-card i {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+    }
+
+    .feedback-benefit-card h3 {
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 15px;
+        color: var(--dark-text);
+        font-size: 1.3rem;
+    }
+
+    .feedback-benefit-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--text-color);
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+        background-color: var(--tertiary-color);
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .testimonial-card {
+        background-color: var(--light-text);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        position: relative;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .testimonial-card .quote-icon {
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin-bottom: 25px;
+        opacity: 0.7;
+    }
+
+    .testimonial-card .testimonial-text {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--text-color);
+        margin-bottom: 30px;
+        flex-grow: 1;
+    }
+
+    .testimonial-card .client-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .testimonial-card .client-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        border: 3px solid var(--primary-color);
+    }
+
+    .testimonial-card .client-name {
+        font-weight: 600;
+        color: var(--dark-text);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 992px) {
+        #feedback-hero h1 {
+            font-size: 3.5rem;
+        }
+
+        #feedback-hero h2 {
+            font-size: 1.5rem;
+        }
+
+        .star-rating label {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        #feedback-hero h1 {
+            font-size: 2.8rem;
+        }
+
+        #feedback-hero h2 {
+            font-size: 1.2rem;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+
+        .feedback-form-container {
+            padding: 30px;
+        }
+
+        .feedback-benefit-card {
+            padding: 25px;
+        }
+
+        /* NEW: Make why-feedback-grid stack on smaller screens */
+        .why-feedback-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        #feedback-hero h1 {
+            font-size: 2.2rem;
+        }
+
+        #feedback-hero h2 {
+            font-size: 1.0rem;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            font-size: 0.8rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+
+        .feedback-form-container {
+            padding: 20px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-size: 0.9rem;
+            padding: 10px 12px;
+        }
+
+        .star-rating label {
+            font-size: 1.2rem;
+            padding: 0 3px;
+        }
+
+        /* Testimonials Responsive */
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .feedback-benefit-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .feedback-benefit-card i {
+            font-size: 2rem;
+        }
+    }

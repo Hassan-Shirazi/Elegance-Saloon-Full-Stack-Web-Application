@@ -1,0 +1,180 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        
+        }
+
+        .logout-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .logout-icon {
+            font-size: 60px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .logout-title {
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .logout-message {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .user-info {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .btn-logout {
+            background: #333;
+            color: white;
+            border: 2px solid #333;
+        }
+
+        .btn-logout:hover {
+            background: #555;
+            border-color: #555;
+        }
+
+        .btn-cancel {
+            background: white;
+            color: #333;
+            border: 2px solid #ccc;
+        }
+
+        .btn-cancel:hover {
+            background: #f8f8f8;
+            border-color: #999;
+        }
+
+        .security-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 6px;
+            border-left: 4px solid #333;
+        }
+
+        .security-note p {
+            color: #666;
+            font-size: 14px;
+            text-align: left;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+            
+            .logout-container {
+                padding: 30px 25px;
+                margin: 20px;
+            }
+
+            .logout-title {
+                font-size: 24px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logout-container {
+                padding: 25px 20px;
+            }
+
+            .logout-title {
+                font-size: 22px;
+            }
+
+            .logout-icon {
+                font-size: 50px;
+            }
+        }
